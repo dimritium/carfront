@@ -15,10 +15,17 @@ class Carlist extends Component {
     constructor(props) {
         super(props);
         this.state = { cars: [] };
+        this.makeHttps = this.makeHttps.bind(this);
+        this.updateCar = this.updateCar.bind(this);
+        this.onDelClick = this.onDelClick.bind(this);
     }
 
     componentDidMount() {
         this.fetchCars();
+    }
+
+    makeHttps(link) {
+        return link.replace("http", "https");
     }
 
     fetchCars = () => {
@@ -47,6 +54,8 @@ class Carlist extends Component {
     }
 
     onDelClick (link) {
+        link = this.makeHttps(link);
+        console.log(link);
         if (window.confirm('Are you sure to delete?')) {
             const token = sessionStorage.getItem("jwt");
             fetch(link, { method: 'DELETE', headers: {'Authorization': token} })
@@ -66,6 +75,7 @@ class Carlist extends Component {
     }
 
     updateCar(car, link) {
+        link = this.makeHttps(link);
         const token = sessionStorage.getItem("jwt");
         fetch(link, {
             method: 'PUT',
