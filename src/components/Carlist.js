@@ -46,11 +46,7 @@ class Carlist extends Component {
             .catch(err => console.error(err))
     }
 
-<<<<<<< HEAD
     onDelClick (link) {
-=======
-    onDelClick = (link) => {
->>>>>>> 9478801c73713ca029334d794dab319ff33231d0
         if (window.confirm('Are you sure to delete?')) {
             const token = sessionStorage.getItem("jwt");
             fetch(link, { method: 'DELETE', headers: {'Authorization': token} })
