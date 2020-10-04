@@ -39,6 +39,7 @@ const Login = () => {
                 <TextField name="username" label="username" onChange={handleChange}></TextField><br />
                 <TextField type="password" name="password" label="password" onChange={handleChange}></TextField><br /><br />
                 <Button variant="outlined" color="primary" onClick={login}>Login</Button><br />
+                <i className="fa fa-info-circle"><span className="show-info">Shh... its admin, admin</span></i>
                 <ToastContainer autoClose={1500}/>
             </div>
         );

@@ -28,6 +28,39 @@
   color: #61dafb;
 }
 
+.show-info {
+    position: absolute;
+    display: none;
+    width: 100px;
+    background: #fff;
+    border-radius: 2px;
+    padding: 2px;
+    align-self: -10px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    margin: 20px 0 0 -40px;
+    /* content: "hello"; */
+}
+
+.show-info:before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    /* border-top: 8px solid transparent; */
+    border-bottom: 8px solid rgba(223, 213, 213, 0.925);
+    /* right: -20px; */
+    /* top: 6px; */
+    top: -9px;
+    right: 49px;
+    /* transform: rotate(180deg); */
+  }
+
+i:hover span {
+    display: block;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
